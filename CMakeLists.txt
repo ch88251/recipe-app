@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 project(recipe_app VERSION 0.1.0 LANGUAGES CXX)
 
+include(FetchContent)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -32,6 +34,12 @@ target_link_libraries(recipe_app PRIVATE recipe_app_lib Qt6::Widgets)
 
 option(BUILD_TESTING "Build tests" ON)
 if(BUILD_TESTING)
+    FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
+    )
+    FetchContent_MakeAvailable(googletest)
+
     enable_testing()
     add_subdirectory(tests)
 endif()
