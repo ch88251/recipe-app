@@ -1,0 +1,4 @@
+add_executable(recipe_app_tests test_recipe.cpp)
+target_link_libraries(recipe_app_tests PRIVATE recipe_app_lib)
+
+add_test(NAME recipe_app_tests COMMAND recipe_app_tests)
