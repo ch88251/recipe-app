@@ -213,6 +213,7 @@ RecipeView::RecipeView(const Recipe& recipe, QWidget* parent) : QWidget(parent) 
     auto* ingredientsTitle = new QLabel("Ingredients", ingredientsPanel);
     QFont ingredientsTitleFont = ingredientsTitle->font();
     ingredientsTitleFont.setBold(true);
+    ingredientsTitleFont.setPointSize(ingredientsTitleFont.pointSize() + 12);
     ingredientsTitle->setFont(ingredientsTitleFont);
     auto* ingredientsLayout = new QVBoxLayout(ingredientsPanel);
     ingredientsLayout->addWidget(ingredientsTitle);
@@ -222,6 +223,7 @@ RecipeView::RecipeView(const Recipe& recipe, QWidget* parent) : QWidget(parent) 
     auto* directionsTitle = new QLabel("Directions", directionsPanel);
     QFont directionsTitleFont = directionsTitle->font();
     directionsTitleFont.setBold(true);
+    directionsTitleFont.setPointSize(directionsTitleFont.pointSize() + 12);
     directionsTitle->setFont(directionsTitleFont);
     auto* directionsList = new QListWidget(directionsPanel);
     QFont directionsFont = directionsList->font();

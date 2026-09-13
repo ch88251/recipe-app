@@ -2,6 +2,9 @@
 
 A Qt 6 desktop application for displaying recipes.
 
+![RecipeView](RecipeView.png)
+
+
 ## Prerequisites
 
 - CMake 3.16 or newer
