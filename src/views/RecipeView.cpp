@@ -210,11 +210,19 @@ RecipeView::RecipeView(const Recipe& recipe, QWidget* parent) : QWidget(parent) 
     }
 
     auto* ingredientsPanel = createPanel(this);
-    auto* ingredientsLayout = new QGridLayout(ingredientsPanel);
+    auto* ingredientsTitle = new QLabel("Ingredients", ingredientsPanel);
+    QFont ingredientsTitleFont = ingredientsTitle->font();
+    ingredientsTitleFont.setBold(true);
+    ingredientsTitle->setFont(ingredientsTitleFont);
+    auto* ingredientsLayout = new QVBoxLayout(ingredientsPanel);
+    ingredientsLayout->addWidget(ingredientsTitle);
     ingredientsLayout->addWidget(ingredientList);
 
     auto* directionsPanel = createPanel(this);
-    auto* directionsLayout = new QGridLayout(directionsPanel);
+    auto* directionsTitle = new QLabel("Directions", directionsPanel);
+    QFont directionsTitleFont = directionsTitle->font();
+    directionsTitleFont.setBold(true);
+    directionsTitle->setFont(directionsTitleFont);
     auto* directionsList = new QListWidget(directionsPanel);
     QFont directionsFont = directionsList->font();
     directionsFont.setPointSize(directionsFont.pointSize() + 8);
@@ -228,6 +236,8 @@ RecipeView::RecipeView(const Recipe& recipe, QWidget* parent) : QWidget(parent) 
     if (recipe.directions().empty()) {
         directionsList->addItem("No directions available.");
     }
+    auto* directionsLayout = new QVBoxLayout(directionsPanel);
+    directionsLayout->addWidget(directionsTitle);
     directionsLayout->addWidget(directionsList);
 
     auto* layout = new QGridLayout;

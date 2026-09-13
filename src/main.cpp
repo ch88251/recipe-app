@@ -11,10 +11,10 @@ int main(int argc, char** argv) {
         "Tender chicken and vegetables seasoned with fajita spices and served in warm tortillas.",
         {
             {"Chicken", 1.0, "lb"},
-            {"Bell Peppers", 2.0, "count"},
-            {"Onion", 1.0, "count"},
+            {"Bell Peppers", 2.0, "each"},
+            {"Onion", 1.0, "each"},
             {"Fajita Seasoning", 2.0, "tbsp"},
-            {"Tortillas", 8.0, "count"},
+            {"Tortillas", 8.0, "each"},
         },
         {
             "Slice the chicken, bell peppers, and onion.",
